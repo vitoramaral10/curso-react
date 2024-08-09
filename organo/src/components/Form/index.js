@@ -1,9 +1,10 @@
+import { useState } from "react";
 import PrimaryButton from "../PrimaryButton";
 import SelectField from "../SelectField";
 import TextField from "../TextField";
 import "./Form.css";
 
-const Form = () => {
+const Form = (props) => {
   const times = [
     "Programação",
     "Front-End",
@@ -14,23 +15,47 @@ const Form = () => {
     "Inovação e Gestão",
   ];
 
-  const aoSalvar = (event) => {
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
+  const [image, setImage] = useState("");
+  const [team, setTeam] = useState("");
+
+  const onSave = (event) => {
     event.preventDefault();
-    console.log("Form foi submetido");
+    console.log(name);
+    props.onAddedEmployee({ name, role, image, team });
   };
 
   return (
     <section className="form">
-      <form onSubmit={aoSalvar}>
+      <form onSubmit={onSave}>
         <h2>Preencha os dados para crirar o card do colaborador.</h2>
-        <TextField required={true} label="Nome" placeholder="Digite seu nome" />
+        <TextField
+          required={true}
+          label="Nome"
+          placeholder="Digite seu nome"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
         <TextField
           required={true}
           label="Cargo"
           placeholder="Digite seu cargo"
+          value={role}
+          onChange={(event) => setRole(event.target.value)}
         />
-        <TextField label="Imagem" placeholder="Informe o endereço da imagem" />
-        <SelectField label="Time" items={times} />
+        <TextField
+          label="Imagem"
+          placeholder="Informe o endereço da imagem"
+          value={image}
+          onChange={(event) => setImage(event.target.value)}
+        />
+        <SelectField
+          label="Time"
+          items={times}
+          value={team}
+          onSelect={setTeam}
+        />
         <PrimaryButton>Criar Card</PrimaryButton>
       </form>
     </section>
