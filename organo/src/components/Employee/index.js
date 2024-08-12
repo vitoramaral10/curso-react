@@ -4,11 +4,11 @@ const Employee = (props) => {
   return (
     <div className="employee">
       <div className="header">
-        <img src="https://github.com/vitoramaral10.png" alt="Vitor Amaral" />
+        <img src={props.employee.image} alt={props.employee.name} />
       </div>
       <div className="footer">
-        <h4>Vitor Melo</h4>
-        <h5>Analista</h5>
+        <h4>{props.employee.name}</h4>
+        <h5>{props.employee.role}</h5>
       </div>
     </div>
   );

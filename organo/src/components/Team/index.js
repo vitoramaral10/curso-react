@@ -11,8 +11,9 @@ const Team = (props) => {
       <h3 style={{ borderBottom: `4px solid ${props.team.primaryColor}` }}>
         {props.team.name}
       </h3>
-      <Employee />
-      <Employee />
+      {props.employees.map((employee) => (
+        <Employee employee={employee} key={employee.name} />
+      ))}
     </section>
   );
 };
