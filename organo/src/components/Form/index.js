@@ -22,7 +22,7 @@ const Form = (props) => {
 
   const onSave = (event) => {
     event.preventDefault();
-    console.log(name);
+
     props.onAddedEmployee({ name, role, image, team });
   };
 
