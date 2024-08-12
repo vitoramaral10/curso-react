@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Banner from "./components/Banner";
 import Form from "./components/Form";
+import Team from "./components/Team";
 
 function App() {
   const [employees, setEmployees] = useState([]);
@@ -14,6 +15,9 @@ function App() {
     <div className="App">
       <Banner />
       <Form onAddedEmployee={onAddedNewEmployee} />
+      <Team name="Programação" />
+      <Team name="Frontennd" />
+      <Team name="Data Science" />
     </div>
   );
 }
