@@ -9,7 +9,7 @@ const SelectField = (props) => {
         onChange={(event) => props.onSelect(event.target.value)}
       >
         {props.items.map((item) => (
-          <option key={item.name}>{item.name}</option>
+          <option key={item}>{item}</option>
         ))}
       </select>
     </div>
