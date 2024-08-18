@@ -14,6 +14,11 @@ const Form = (props) => {
     event.preventDefault();
 
     props.onAddedEmployee({ name, role, image, team });
+
+    setName("");
+    setRole("");
+    setImage("");
+    setTeam("");
   };
 
   return (
