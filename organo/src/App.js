@@ -57,7 +57,13 @@ function App() {
         teams={teams.map((team) => team.name)}
       />
       {teams.map((team) => (
-        <Team team={team} key={team.name} employees={employees.filter(employee => employee.team === team.name)} />
+        <Team
+          team={team}
+          key={team.name}
+          employees={employees.filter(
+            (employee) => employee.team === team.name
+          )}
+        />
       ))}
     </div>
   );
