@@ -8,6 +8,7 @@ const SelectField = (props) => {
         value={props.value}
         onChange={(event) => props.onSelect(event.target.value)}
       >
+        <option value="">Selecione...</option>
         {props.items.map((item) => (
           <option key={item}>{item}</option>
         ))}

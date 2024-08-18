@@ -47,7 +47,6 @@ function App() {
 
   const onAddedNewEmployee = (employee) => {
     setEmployees([...employees, employee]);
-    console.log("Colaborador adicionado => ", employee);
   };
 
   return (

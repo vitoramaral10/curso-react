@@ -2,7 +2,7 @@
   width: 280px;
 }
 
-.employee .header {
+.employee .employee-image {
   background-color: #f0f0f0;
   border-radius: 10px 10px 0 0;
 }
@@ -14,7 +14,7 @@
   bottom: -50px;
 }
 
-.employee .footer {
+.employee .employee-info {
   background-color: #ffffff;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
   border-radius: 0 0 10px 10px;
@@ -22,7 +22,7 @@
   padding-bottom: 40px;
 }
 
-.employee .footer h4 {
+.employee .employee-info h4 {
   color: #6278f7;
   font-size: 18px;
   line-height: 22px;
@@ -30,7 +30,7 @@
   margin-bottom: 8px;
 }
 
-.employee .footer h5 {
+.employee .employee-info h5 {
   font-size: 18px;
   line-height: 22px;
   color: #212121;
