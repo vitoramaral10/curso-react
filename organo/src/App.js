@@ -49,6 +49,10 @@ function App() {
     setEmployees([...employees, employee]);
   };
 
+  const onDeletedEmployee = (employee) => {
+    setEmployees(employees.filter((e) => e !== employee));
+  };
+
   return (
     <div className="App">
       <Banner />
@@ -63,6 +67,7 @@ function App() {
           employees={employees.filter(
             (employee) => employee.team === team.name
           )}
+          onDelete={onDeletedEmployee}
         />
       ))}
       <Footer />

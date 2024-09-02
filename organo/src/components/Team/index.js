@@ -13,13 +13,16 @@ const Team = (props) => {
           {props.team.name}
         </h3>
         <div className="employees">
-          {props.employees.map((employee) => (
-            <Employee
-              employee={employee}
-              key={employee.name}
-              backgroundColor={props.team.primaryColor}
-            />
-          ))}
+          {props.employees.map((employee, index) => {
+            return (
+              <Employee
+                employee={employee}
+                key={employee.name}
+                backgroundColor={props.team.primaryColor}
+                onDelete={props.onDelete}
+              />
+            );
+          })}
         </div>
       </section>
     )
