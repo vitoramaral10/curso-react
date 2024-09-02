@@ -5,43 +5,36 @@ import Team from "./components/Team";
 import Footer from "./components/Footer";
 
 function App() {
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       name: "Programação",
-      primaryColor: "#57c278",
-      secondaryColor: "#d9f7e9",
+      color: "#57c278",
     },
     {
       name: "Front-End",
-      primaryColor: "#82CFFA",
-      secondaryColor: "#E8F8FF",
+      color: "#82CFFA",
     },
     {
       name: "Data Science",
-      primaryColor: "#A6D157",
-      secondaryColor: "#F0F8E2",
+      color: "#A6D157",
     },
     {
       name: "DevOps",
-      primaryColor: "#E06B69",
-      secondaryColor: "#FDE7E8",
+      color: "#E06B69",
     },
     {
       name: "Ux e Design",
-      primaryColor: "#DB6EBF",
-      secondaryColor: "#FAE9F5",
+      color: "#DB6EBF",
     },
     {
       name: "Mobile",
-      primaryColor: "#FFBA05",
-      secondaryColor: "#FFF5D9",
+      color: "#FFBA05",
     },
     {
       name: "Inovação e Gestão",
-      primaryColor: "#FF8A29",
-      secondaryColor: "#FFEEDF",
+      color: "#FF8A29",
     },
-  ];
+  ]);
 
   const [employees, setEmployees] = useState([]);
 
@@ -51,6 +44,14 @@ function App() {
 
   const onDeletedEmployee = (employee) => {
     setEmployees(employees.filter((e) => e !== employee));
+  };
+
+  const onChangeTeamColor = (team, color) => {
+    setTeams(
+      teams.map((time) =>
+        time.name === team ? { ...time, color: color } : time
+      )
+    );
   };
 
   return (
@@ -68,6 +69,7 @@ function App() {
             (employee) => employee.team === team.name
           )}
           onDelete={onDeletedEmployee}
+          onChangeColor={onChangeTeamColor}
         />
       ))}
       <Footer />
